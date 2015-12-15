@@ -1,0 +1,10 @@
+<%= simple_form_for(@category, url: @category.new_record? ? admin_categories_path : admin_category_path(@category), html: {class: "form-horizontal" }, defaults: { label_html: { class: 'col-sm-2' }, bootstrap_wrapper_html: { class: 'col-sm-8' } }) do |f| %>
+<% @category.errors.full_messages.each do |msg| %><li><%= msg %></li><% end %>
+<%= tag(:input, type: "hidden", name: request_forgery_protection_token.to_s, value: form_authenticity_token) %>
+<%= f.input :name, label: '名称' %>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <%= f.button :submit, "保存", class: "btn-primary" %>
+  </div>
+</div>
+<% end %>

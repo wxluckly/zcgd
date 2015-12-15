@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-xs-3"></div>
+  <div class="col-xs-6"><h3 class="text-center">商品类别管理</h3></div>
+  <div class="col-xs-3">
+    <%= link_to '添加', new_admin_category_path, class: 'pull-right btn btn-warning', style: "margin-top: 10px;" %>
+  </div>
+  <div class="col-xs-12">
+    <% if @categories.present? %>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>名称</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @categories.each do |category| %>
+        <tr>
+          <td><%= category.name %></td>
+          <td>
+            <%= link_to '编辑', edit_admin_category_path(category), class: "btn btn-default" %>
+            <%= link_to '删除', admin_category_path(category), method: :delete, data: { confirm: '确定删除吗?' }, class: "btn btn-danger" %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate @categories %>
+    <% else %>
+    <div>
+      暂无内容
+    </div>
+    <% end %>
+  </div>
+</div>
