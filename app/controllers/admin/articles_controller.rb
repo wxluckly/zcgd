@@ -50,6 +50,6 @@ class Admin::ArticlesController < Admin::ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:title, :material, :standard, :circulation, :desc, :image)
+    params.require(:article).permit(:title, :content, :cover)
   end
 end

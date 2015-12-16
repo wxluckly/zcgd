@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-3"></div>
-  <div class="col-xs-6"><h3 class="text-center">商品管理</h3></div>
+  <div class="col-xs-6"><h3 class="text-center">店面管理</h3></div>
   <div class="col-xs-3">
     <%= link_to '添加', new_admin_shop_path, class: 'pull-right btn btn-warning', style: "margin-top: 10px;" %>
   </div>
@@ -9,24 +9,16 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>缩略图</th>
-          <th>名称</th>
-          <th>材质</th>
-          <th>规格</th>
-          <th>发行量</th>
-          <th>详情</th>
+          <th>电话</th>
+          <th>地址</th>
           <th>操作</th>
         </tr>
       </thead>
       <tbody>
         <% @shops.each do |shop| %>
         <tr>
-          <td><%= image_tag shop.image_url(:thumb) %></td>
-          <td><%= shop.title %></td>
-          <td><%= shop.material %></td>
-          <td><%= shop.standard %></td>
-          <td><%= shop.circulation %></td>
-          <td><%= shop.desc %></td>
+          <td><%= shop.mobile %></td>
+          <td><%= shop.address %></td>
           <td>
             <%= link_to '编辑', edit_admin_shop_path(shop), class: "btn btn-default" %>
             <%= link_to '删除', admin_shop_path(shop), method: :delete, data: { confirm: '确定删除吗?' }, class: "btn btn-danger" %>

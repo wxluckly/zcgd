@@ -1,13 +1,9 @@
 <%= simple_form_for(@shop, url: @shop.new_record? ? admin_shops_path : admin_shop_path(@shop), html: {class: "form-horizontal" }, defaults: { label_html: { class: 'col-sm-2' }, bootstrap_wrapper_html: { class: 'col-sm-8' } }) do |f| %>
 <% @shop.errors.full_messages.each do |msg| %><li><%= msg %></li><% end %>
 <%= tag(:input, type: "hidden", name: request_forgery_protection_token.to_s, value: form_authenticity_token) %>
-<%= f.input :category_id, collection: Category.all, label: '产品类别' %>
-<%= f.input :title, label: '名称' %>
-<%= f.input :material, label: '材质' %>
-<%= f.input :standard, label: '规格' %>
-<%= f.input :circulation, label: '发行量' %>
-<%= f.input :desc, label: '详情', as: :text %>
-<%= f.input :image, label: '图片' %>
+<%= f.input :area_id, collection: Category.all, label: '区域' %>
+<%= f.input :mobile, label: '电话' %>
+<%= f.input :address, label: '地址' %>
 <div class="form-group">
   <div class="col-sm-offset-2 col-sm-10">
     <%= f.button :submit, "保存", class: "btn-primary" %>

@@ -40,6 +40,7 @@ bower.json
 capybara-*.html
 .rspec
 /public/system
+/public/file
 /coverage/
 /spec/tmp
 **.orig
