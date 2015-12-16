@@ -16,6 +16,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sass-rails', '>= 3.2'
 gem 'animate-rails'
 gem 'therubyracer'
+gem 'devise-bootstrap-views'
 
 # 辅助工具
 gem 'quiet_assets'  # 禁用assets log

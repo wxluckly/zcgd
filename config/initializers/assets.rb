@@ -9,5 +9,5 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
-Rails.application.config.assets.precompile += %w( reset.css app_bootstrap.css ie.css bootstrap-ie6.css admin.css )
+Rails.application.config.assets.precompile += %w( reset.css app_bootstrap.css ie.css bootstrap-ie6.css admin.css devise.css )
 Rails.application.config.assets.precompile += %w( twitter/glyphicons-halflings.png twitter/glyphicons-halflings-white.png )

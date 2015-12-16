@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :staffers
+  devise_for :staffers, controllers: { sessions: 'staffers/sessions' }
   root 'welcome#index'
 
   namespace :admin do

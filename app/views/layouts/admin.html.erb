@@ -26,6 +26,15 @@
           <li <% if current_page?(controller: 'products') %>class="active"<% end %>>
             <%= link_to "商品管理", admin_products_path %>
           </li>
+          <li <% if current_page?(controller: 'areas') %>class="active"<% end %>>
+            <%= link_to "店面区域管理", admin_areas_path %>
+          </li>
+          <li <% if current_page?(controller: 'shops') %>class="active"<% end %>>
+            <%= link_to "店面管理", admin_shops_path %>
+          </li>
+          <li <% if current_page?(controller: 'articles') %>class="active"<% end %>>
+            <%= link_to "文章管理", admin_articles_path %>
+          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if current_staffer and staffer_signed_in? %>
