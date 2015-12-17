@@ -1,4 +1,6 @@
 class Staffers::RegistrationsController < Devise::RegistrationsController
+  http_basic_authenticate_with name: Settings.basic_authenticate.name, password: Settings.basic_authenticate.password, only: [:new, :create]
+
   layout 'devise'
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]

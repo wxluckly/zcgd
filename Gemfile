@@ -25,6 +25,7 @@ gem 'will_paginate'
 gem 'simple_form'
 gem 'ancestry'
 gem 'rucaptcha'
+gem "config"
 
 # 权限验证
 gem 'devise'
