@@ -34,6 +34,7 @@ gem "cancan"
 # 文件和图片处理
 gem 'mini_magick'
 gem 'carrierwave'
+gem 'carrierwave-imageoptimizer'
 
 # 富文本编辑器
 gem 'rails_kindeditor'

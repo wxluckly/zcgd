@@ -1,5 +1,5 @@
 class Product::ImageUploader < CarrierWave::Uploader::Base
-
+  include CarrierWave::ImageOptimizer
   include CarrierWave::MiniMagick
 
   storage :file
@@ -14,6 +14,11 @@ class Product::ImageUploader < CarrierWave::Uploader::Base
 
   version :thumb do
     process resize_to_fill: [100, 100]
+  end
+
+  version :v168x168 do
+    process resize_to_fill: [168, 168]
+    process :optimize
   end
 
   def extension_white_list

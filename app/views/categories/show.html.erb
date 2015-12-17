@@ -4,7 +4,7 @@
   <div class="chanpinliebiao">
     <% @products.each do |product| %>
     <ul>
-      <li><a href='<%= product_path(product) %>'><%= image_tag product.image_url(:thumb) %></a></li>
+      <li><a href='<%= product_path(product) %>'><%= image_tag product.image_url(:v168x168) %></a></li>
       <li class="title"><a href='<%= product_path(product) %>'><%= product.title %></a></li>
     </ul>
     <% end %>
