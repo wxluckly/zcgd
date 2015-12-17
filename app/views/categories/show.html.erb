@@ -1,0 +1,17 @@
+<div class="header"><a href='javascript:void(0);' onclick="history.go(-1);">上一页</a><span>产品</span><a href="/">首页</a></div>
+<div class="main2">
+  <div class="search"><input class="neirong" type="text" required placeholder="搜索你想要的产品关键字"  value=""><input type="button" class="sou"></div>
+  <div class="chanpinliebiao">
+    <% @products.each do |product| %>
+    <ul>
+      <li><a href='<%= product_path(product) %>'><%= image_tag product.image_url(:thumb) %></a></li>
+      <li class="title"><a href='<%= product_path(product) %>'><%= product.title %></a></li>
+    </ul>
+    <% end %>
+  </div>
+  <div class="prdh"><a href='/categories/0' <% if 0 == params[:id].to_i %>class="select"<% end %>>全部</a>
+    <% Category.find_each do |category| %>
+    丨<a <% if category.id == params[:id].to_i %>class="select"<% end %> href='<%= category_path(category) %>'><%= category.name %></a>
+    <% end %>
+  </div>
+</div>

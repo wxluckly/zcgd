@@ -1,0 +1,11 @@
+<div class="header"><a href='javascript:void(0);' onclick="history.go(-1);">上一页</a><span>产品</span><a href="/">首页</a></div>
+<div class="main2">
+  <div class="cptp"><%= image_tag @product.image_url %></div>
+  <table class="cpcs">
+    <tr><td class="title">名&nbsp;&nbsp;&nbsp;&nbsp;称</td><td><%= @product.title %></td></tr>
+    <tr><td class="title">材&nbsp;&nbsp;&nbsp;&nbsp;质</td><td><%= @product.material %></td></tr>
+    <tr><td class="title">规&nbsp;&nbsp;&nbsp;&nbsp;格</td><td><%= @product.standard %></td></tr>
+    <tr><td class="title">发行量</td><td><%= @product.circulation %></td></tr>
+  </table>
+  <p class="cpjs"><%= @product.desc %></p>
+</div>
