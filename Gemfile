@@ -26,6 +26,7 @@ gem 'simple_form'
 gem 'ancestry'
 gem 'rucaptcha'
 gem "config"
+gem 'ancestry'
 
 # 权限验证
 gem 'devise'

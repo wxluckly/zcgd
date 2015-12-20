@@ -9,7 +9,7 @@ class Article::CoverUploader < CarrierWave::Uploader::Base
   end
 
   version :big do
-    process resize_to_fit: [600, 2000]
+    process resize_to_limit: [600, 2000]
   end
 
   version :thumb do

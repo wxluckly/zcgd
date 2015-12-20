@@ -2,7 +2,7 @@
 <% @article.errors.full_messages.each do |msg| %><li><%= msg %></li><% end %>
 <%= tag(:input, type: "hidden", name: request_forgery_protection_token.to_s, value: form_authenticity_token) %>
 <%= f.input :title, label: '名称' %>
-<%= f.input :content, label: '详情', as: :text %>
+<%= f.input :content, label: '详情', as: :kindeditor, input_html: {window_onload: true, filterMode: false} %>
 <%= f.input :cover, label: '图片' %>
 <div class="form-group">
   <div class="col-sm-offset-2 col-sm-10">

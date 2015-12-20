@@ -1,7 +1,8 @@
 <%= simple_form_for(@shop, url: @shop.new_record? ? admin_shops_path : admin_shop_path(@shop), html: {class: "form-horizontal" }, defaults: { label_html: { class: 'col-sm-2' }, bootstrap_wrapper_html: { class: 'col-sm-8' } }) do |f| %>
 <% @shop.errors.full_messages.each do |msg| %><li><%= msg %></li><% end %>
 <%= tag(:input, type: "hidden", name: request_forgery_protection_token.to_s, value: form_authenticity_token) %>
-<%= f.input :area_id, collection: Category.all, label: '区域' %>
+<%= f.input :area_id, collection: Area.sellect_list, label: '区域' %>
+<%= f.input :name, label: '店名' %>
 <%= f.input :mobile, label: '电话' %>
 <%= f.input :address, label: '地址' %>
 <div class="form-group">

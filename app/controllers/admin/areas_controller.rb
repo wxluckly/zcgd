@@ -1,7 +1,7 @@
 class Admin::AreasController < Admin::ApplicationController
 
   def index
-    @areas = Area.paginate(page: params[:page])
+    @areas = Area.select{ |node| node.is_root? }
   end
 
   def new
@@ -50,6 +50,6 @@ class Admin::AreasController < Admin::ApplicationController
 
   private
   def area_params
-    params.require(:area).permit(:name)
+    params.require(:area).permit(:name, :parent_id)
   end
 end

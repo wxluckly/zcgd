@@ -1,7 +1,8 @@
 <%= simple_form_for(@area, url: @area.new_record? ? admin_areas_path : admin_area_path(@area), html: {class: "form-horizontal" }, defaults: { label_html: { class: 'col-sm-2' }, bootstrap_wrapper_html: { class: 'col-sm-8' } }) do |f| %>
 <% @area.errors.full_messages.each do |msg| %><li><%= msg %></li><% end %>
 <%= tag(:input, type: "hidden", name: request_forgery_protection_token.to_s, value: form_authenticity_token) %>
-<%= f.input :name, label: '地区' %>
+<%= f.input :parent_id, collection: Area.sellect_list, label: '地区' %>
+<%= f.input :name, label: '省市' %>
 <div class="form-group">
   <div class="col-sm-offset-2 col-sm-10">
     <%= f.button :submit, "保存", class: "btn-primary" %>

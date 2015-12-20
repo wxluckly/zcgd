@@ -11,3 +11,4 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( reset.css app_bootstrap.css ie.css bootstrap-ie6.css admin.css devise.css )
 Rails.application.config.assets.precompile += %w( twitter/glyphicons-halflings.png twitter/glyphicons-halflings-white.png )
+Rails.application.config.assets.precompile += %w( admin.js )

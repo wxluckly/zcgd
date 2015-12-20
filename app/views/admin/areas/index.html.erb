@@ -1,35 +1,73 @@
+<style type="text/css">
+  .checkbox + .checkbox { margin-top: -5px; }
+  .module-company-nodes-manage-box .module-content{padding: 30px;}
+  .module-company-nodes-manage-box .element-template{background: #f6f8fa;padding: 20px;margin-bottom: 20px;}
+  .module-company-nodes-manage-box .move-nodes{border-radius: 5px;margin-left: -20px;}
+  .module-company-nodes-manage-box .element-checkbox{border-left: solid 2px #e3e4e8;}
+  .module-company-nodes-manage-box .checkbox{border-left: solid 2px #e3e4e8;padding: 5px 0 10px 35px;margin-bottom: 0;}
+  .module-company-nodes-manage-box .checkbox1{border-left: 0;}
+  .module-company-nodes-manage-box .checkbox2{margin-left: 35px;}
+  .module-company-nodes-manage-box .checkbox3{margin-left: 70px;}
+  .module-company-nodes-manage-box .checkbox4{margin-left: 105px;}
+  .module-company-nodes-manage-box .checkbox5{margin-left: 140px;}
+  .module-company-nodes-manage-box .checkbox6{margin-left: 175px;}
+  .module-company-nodes-manage-box .checkbox7{margin-left: 210px;}
+  .module-company-nodes-manage-box .checkbox8{margin-left: 245px;}
+  .module-company-nodes-manage-box .checkbox9{margin-left: 280px;}
+  .module-company-nodes-manage-box .checkbox10{margin-left: 315px;}
+</style>
+
 <div class="row">
-  <div class="col-xs-3"></div>
-  <div class="col-xs-6"><h3 class="text-center">店面区域管理</h3></div>
-  <div class="col-xs-3">
-    <%= link_to '添加', new_admin_area_path, class: 'pull-right btn btn-warning', style: "margin-top: 10px;" %>
-  </div>
-  <div class="col-xs-12">
-    <% if @areas.present? %>
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>地区</th>
-          <th>操作</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @areas.each do |area| %>
-        <tr>
-          <td><%= area.name %></td>
-          <td>
-            <%= link_to '编辑', edit_admin_area_path(area), class: "btn btn-default" %>
-            <%= link_to '删除', admin_area_path(area), method: :delete, data: { confirm: '确定删除吗?' }, class: "btn btn-danger" %>
-          </td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <%= will_paginate @areas %>
-    <% else %>
-    <div>
-      暂无内容
+  <div class="span8 offset2"><h3 class="text-center">节点管理</h3></div><div class="span2 align-down"><%= link_to '添加节点', new_admin_area_path(area: params[:area]), class: 'pull-right btn btn-warning' %></div>
+  <div class="span12">
+    <%= form_tag admin_area_path("id"), method: "delete", id: "areas" do %>
+    <div class="module-company-nodes-manage-box span12">
+      <div class="element-template">
+        <div class="element-checkbox">
+          <%= categories(@areas).html_safe %>
+        </div>
+      </div>
     </div>
+
+    <div class="span2"><button type="button" class="btn btn-default btn-sm" id="delete"><i class="fa fa-trash-o"></i> 删除所选节点</button></div>
+    <div class="span4">
+      <%= select_tag "parent_area_id", options_for_select(Area.sellect_list), prompt: "移动节点到....", class: 'form-control move-areas' %>
+    </div>
+
     <% end %>
   </div>
 </div>
+
+<% content_for :script do %>
+<script>
+  $(function(){
+    $("#delete").click(function(){
+      $("#areas input[name='_method']").attr("value", "delete")
+      if($("#areas input:checked").length == 0){
+        alert("请选择要删除的节点");
+      }else{
+        if(confirm("确定删除吗?")){
+          $("#areas").submit();
+        }
+      }
+    })
+
+    $("#parent_area_id").change(function(){
+      if($(this).val() != ""){
+        if($("#areas input:checked").length == 0){
+          alert("请选择要移动的类别");
+          $("#parent_category_id option[value='']").attr("selected", "selected");
+        }else{
+          if(confirm("确定移动吗？")){
+            $("#areas").attr("action", "<%= move_admin_areas_path %>");
+            $("#areas input[name='_method']").attr("value", "put");
+            $("#areas").submit();
+          }else{
+            $("#parent_area_id option[value='']").attr("selected", "selected");
+          }
+        }
+      }
+    })
+  })
+</script>
+<% end %>
