@@ -11,7 +11,7 @@
   </div>
   <div class="prdh"><a href='/categories/0' <% if 0 == params[:id].to_i %>class="select"<% end %>>全部</a>
     <% Category.order(id: :desc).each do |category| %>
-    丨<a <% if category.id == params[:id].to_i %>class="select"<% end %> href='<%= category_path(category) %>'><%= category.name %></a>
+    <a <% if category.id == params[:id].to_i %>class="select"<% end %> href='<%= category_path(category) %>'><%= category.name %></a>
     <% end %>
   </div>
 </div>
