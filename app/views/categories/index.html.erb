@@ -1,8 +1,8 @@
-<div class="main">
+<div class="main main2">
   <div class="header"><a href='javascript:void(0);' onclick="history.go(-1);">上一页</a><span>产品</span><a href="/">首页</a></div>
-  <div class="cplb">
-    <% @categories.each do |category| %>
-    <a href='<%= category_path(category) %>'><%= category.name %></a>
+  <div class="cplb cplb3">
+    <% @categories.each_with_index do |category, index| %>
+    <a href='<%= category_path(category) %>' <% if index + 1 == @categories.length %>class="last"<% end %>><%= category.name %></a>
     <% end %>
   </div>
 </div>
