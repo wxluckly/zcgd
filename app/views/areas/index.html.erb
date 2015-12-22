@@ -6,8 +6,10 @@
     <% end %>
   </ul>
 </div>
+<% content_for :script do %>
 <script type="text/javascript">
   function showMenu(index){
     $('#menu' + index).toggle();
   }
 </script>
+<% end %>

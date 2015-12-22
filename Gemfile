@@ -26,7 +26,6 @@ gem 'simple_form'
 gem 'ancestry'
 gem 'rucaptcha'
 gem "config"
-gem 'ancestry'
 
 # 权限验证
 gem 'devise'
@@ -39,6 +38,10 @@ gem 'carrierwave-imageoptimizer'
 
 # 富文本编辑器
 gem 'rails_kindeditor'
+
+# HTML解析
+gem 'typhoeus'
+gem 'nokogiri'
 
 # Use unicorn as the app server
 gem 'unicorn'

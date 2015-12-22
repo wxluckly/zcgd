@@ -1,0 +1,203 @@
+<div class="header"><a href='javascript:void(0);' onclick="history.go(-1);">上一页</a><span>金价</span><a href="/">首页</a></div>
+<div class="main2">
+  <div class="jjtitle"><%= image_tag 'jinjiaico.png', class: "jjico" %><%= image_tag 'jizhunjinjia.png' %></div>
+  <div class="g_stlye"></div>
+
+  <div class="g_center">
+    <div id="AU9">
+      <div class="list">
+        <span class="b">纯度</span>
+        <span>AU9999</span>
+        <span>AU9995</span>
+      </div>
+      <div class="list">
+        <span class="b">元/克</span>
+        <span><%= @au9999_91 %></span>
+        <span><%= @au9995_91 %></span>
+      </div>
+      <div class="list">
+        <span class="b">元/盎司</span>
+        <span><%= @au9999_92 %></span>
+        <span><%= @au9995_92 %></span>
+      </div>
+    </div>
+    <div id="AU13" style="display: none;">
+      <div class="list">
+        <span class="b">纯度</span>
+        <span>AU9999</span>
+        <span>AU9995</span>
+      </div>
+      <div class="list">
+        <span class="b">元/克</span>
+        <span><%= @au9999_131 %></span>
+        <span><%= @au9995_131 %></span>
+      </div>
+      <div class="list">
+        <span class="b">元/盎司</span>
+        <span><%= @au9999_132 %></span>
+        <span><%= @au9995_132 %></span>
+      </div>
+    </div>
+    <div id="AU15" style="display: none;">
+      <div class="list">
+        <span class="b">纯度</span>
+        <span>AU9999</span>
+        <span>AU9995</span>
+      </div>
+      <div class="list">
+        <span class="b">元/克</span>
+        <span><%= @au9999_151 %></span>
+        <span><%= @au9995_151 %></span>
+      </div>
+      <div class="list">
+        <span class="b">元/盎司</span>
+        <span><%= @au9999_152 %></span>
+        <span><%= @au9995_152 %></span>
+      </div>
+    </div>
+    <div class="time" id="AU_SELECT"><%= @date %>&nbsp;&nbsp;<span class="selected" data-id="AU9">9:00</span>&nbsp;&nbsp;<span class="" data-id="AU13">13:30</span>&nbsp;&nbsp;<span class="" data-id="AU15">15:30</span></div>
+  </div>
+
+  <div class="jjtitle"><%= image_tag 'jinjiaico.png', class: "jjico" %><%= image_tag 'jizhunyinjia.png' %></div>
+  <div class="g_stlye g_stlye2"></div>
+  <div class="g_center g_center2">
+    <div id="AGTD9">
+      <div class="list">
+        <span class="b">类别</span>
+        <span>AGTD</span>
+      </div>
+      <div class="list">
+        <span class="b">元/克</span>
+        <span><%= @agtd_91 %></span>
+      </div>
+      <div class="list">
+        <span class="b">元/盎司</span>
+        <span><%= @agtd_92 %></span>
+      </div>
+    </div>
+    <div id="AGTD13" style="display: none;">
+      <div class="list">
+        <span class="b">类别</span>
+        <span>AGTD</span>
+      </div>
+      <div class="list">
+        <span class="b">元/克</span>
+        <span><%= @agtd_131 %></span>
+      </div>
+      <div class="list">
+        <span class="b">元/盎司</span>
+        <span><%= @agtd_132 %></span>
+      </div>
+    </div>
+    <div id="AGTD15" style="display: none;">
+      <div class="list">
+        <span class="b">类别</span>
+        <span>AGTD</span>
+      </div>
+      <div class="list">
+        <span class="b">元/克</span>
+        <span><%= @agtd_151 %></span>
+      </div>
+      <div class="list">
+        <span class="b">元/盎司</span>
+        <span><%= @agtd_152 %></span>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="time" id="AGTD_SELECT"><%= @date %>&nbsp;<span class="selected" data-id="AGTD9">9:00</span>&nbsp;&nbsp;<span class="" data-id="AGTD13">13:30</span>&nbsp;&nbsp;<span class="" data-id="AGTD15">15:30</span></div>
+  </div>
+
+  <div class="jjtitle"><%= image_tag 'jinjiaico.png', class: "jjico" %><%= image_tag 'touzijinjia.png' %></div>
+  <div class="g_stlye"></div>
+  <div class="g_center">
+    <div id="TZ9">
+      <div class="list">
+        <span class="b">纯度</span>
+        <span>销售</span>
+        <span>回购</span>
+      </div>
+      <div class="list">
+        <span class="b">元/克</span>
+        <span><%= @tzxs_91 %></span>
+        <span><%= @tzhg_91 %></span>
+      </div>
+      <div class="list">
+        <span class="b">元/盎司</span>
+        <span><%= @tzxs_92 %></span>
+        <span><%= @tzhg_92 %></span>
+      </div>
+    </div>
+    <div id="TZ13" style="display:none;">
+      <div class="list">
+        <span class="b">纯度</span>
+        <span>销售</span>
+        <span>回购</span>
+      </div>
+      <div class="list">
+        <span class="b">元/克</span>
+        <span><%= @tzxs_131 %></span>
+        <span><%= @tzhg_131 %></span>
+      </div>
+      <div class="list">
+        <span class="b">元/盎司</span>
+        <span><%= @tzxs_132 %></span>
+        <span><%= @tzhg_132 %></span>
+      </div>
+    </div>
+    <div id="TZ15" style="display:none;">
+      <div class="list">
+        <span class="b">纯度</span>
+        <span>销售</span>
+        <span>回购</span>
+      </div>
+      <div class="list">
+        <span class="b">元/克</span>
+        <span><%= @tzxs_151 %></span>
+        <span><%= @tzhg_151 %></span>
+      </div>
+      <div class="list">
+        <span class="b">元/盎司</span>
+        <span><%= @tzxs_152 %></span>
+        <span><%= @tzhg_152 %></span>
+      </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="time" id="TZ_SELECT"><%= @date %>&nbsp;<span class="selected" data-id="TZ9">9:00</span>&nbsp;&nbsp;<span data-id="TZ13">13:30</span>&nbsp;&nbsp;<span data-id="TZ15">15:30</span></div>
+  </div>
+</div>
+<% content_for :script do %>
+<script type="text/javascript">
+  $(function(){
+    $("#AU_SELECT span").click(function(){
+      var _this = $(this);
+      _this.addClass('selected');
+      _this.siblings('span').removeClass('selected');
+      $('#AU9').hide();
+      $('#AU13').hide();
+      $('#AU15').hide();
+      $('#' + _this.data('id')).show();
+    });
+
+    $("#AGTD_SELECT span").click(function(){
+      var _this = $(this);
+      _this.addClass('selected');
+      _this.siblings('span').removeClass('selected');
+      $('#AGTD9').hide();
+      $('#AGTD13').hide();
+      $('#AGTD15').hide();
+      $('#' + _this.data('id')).show();
+    });
+
+    $("#TZ_SELECT span").click(function(){
+      var _this = $(this);
+      _this.addClass('selected');
+      _this.siblings('span').removeClass('selected');
+      $('#TZ9').hide();
+      $('#TZ13').hide();
+      $('#TZ15').hide();
+      $('#' + _this.data('id')).show();
+    });
+  })
+</script>
+<% end %>

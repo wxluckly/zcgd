@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :products
   namespace :sub do
-    get :company, :company_intro, :company_aboutus
+    get :company, :company_intro, :company_aboutus, :price
   end
   namespace :admin do
     root 'welcome#index'
