@@ -11,4 +11,5 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+//= require TouchSlide.1.1.source.js
+

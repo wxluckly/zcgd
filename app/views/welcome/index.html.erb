@@ -1,5 +1,33 @@
 <div class="main">
-  <div class="lbt"><%= image_tag 'toutu.jpg' %></div>
+  <div class="lbt">
+    <div id="focus" class="focus">
+      <div class="hd">
+        <ul><li class="">1</li><li class="on">2</li><li class="">3</li></ul>
+      </div>
+      <div class="bd">
+        <div class="tempWrap" >
+          <ul>
+            <li><a href="#"><%= image_tag 'toutu.jpg' %></a></li>
+            <li><a href="#"><%= image_tag 'toutu.jpg' %></a></li>
+            <li ><a href="#"><%= image_tag 'toutu.jpg' %></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <% content_for :script do %>
+    <script type="text/javascript">
+      TouchSlide({
+        slideCell:"#focus",
+          titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+          mainCell:".bd ul",
+          effect:"left",
+          autoPlay:true,//自动播放
+          autoPage:true, //自动分页
+          switchLoad:"_src" //切换加载，真实图片路径为"_src"
+        });
+    </script>
+    <% end %>
+  </div>
   <div class="banner">
     <a class="chanpin" href='<%= categories_path %>'><span>产品<br><%= image_tag 'd1.png' %></span></a>
     <a class="mendian" href='<%= areas_path %>'><span>门店<br><%= image_tag 'd2.png' %></span></a>

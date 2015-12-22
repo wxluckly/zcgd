@@ -2,7 +2,7 @@
   <div class="header"><a href='javascript:void(0);' onclick="history.go(-1);">上一页</a><span>产品</span><a href="/">首页</a></div>
   <div class="cplb">
     <% @categories.each do |category| %>
-    <a href='<%= category_path(category) %>'><%= category.name %><%= image_tag 'productbg.png' %></a>
+    <a href='<%= category_path(category) %>'><%= category.name %></a>
     <% end %>
   </div>
 </div>
