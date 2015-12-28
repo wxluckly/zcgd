@@ -7,9 +7,9 @@
       <div class="bd">
         <div class="tempWrap" >
           <ul>
-            <li><a href="#"><%= image_tag 'toutu.jpg' %></a></li>
-            <li><a href="#"><%= image_tag 'toutu.jpg' %></a></li>
-            <li ><a href="#"><%= image_tag 'toutu.jpg' %></a></li>
+            <% Banner.find_each do |banner| %>
+            <li><a href="<%= banner.url %>"><%= image_tag banner.image_url(:v480x270) %></a></li>
+            <% end %>
           </ul>
         </div>
       </div>

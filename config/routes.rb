@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       end
     end
     resources :shops
+    resources :banners
     resources :categories
     resources :products
   end
