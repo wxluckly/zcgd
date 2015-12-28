@@ -1,6 +1,10 @@
 <div class="header"><a href='javascript:void(0);' onclick="history.go(-1);">上一页</a><span>产品</span><a href="/">首页</a></div>
 <div class="main2">
-  <div class="search"><input class="neirong" type="text" required placeholder="搜索你想要的产品关键字"  value=""><input type="button" class="sou"></div>
+  <%= form_tag "/categories/#{params[:id]}", :method => 'get' do %>
+  <div class="search">
+    <input class="neirong" type="text" required placeholder="搜索你想要的产品关键字"  value="<%= params[:search] %>" name='search'><input type="submit" class="sou" value=''>
+  </div>
+  <% end %>
   <div class="chanpinliebiao">
     <% @products.each do |product| %>
     <ul>

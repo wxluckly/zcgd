@@ -9,5 +9,8 @@ class CategoriesController < ApplicationController
     else
       @products = Product.all
     end
+    if params[:search].present?
+      @products = @products.where('title like ?', "%#{params[:search]}%")
+    end
   end
 end
