@@ -11,5 +11,14 @@
   <%= yield %>
   <%= javascript_include_tag 'application' %>
   <%= yield :script %>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?b9af5c0475a3076986a0f11a2dce974d";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 </body>
 </html>
