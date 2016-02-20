@@ -1,3 +1,4 @@
+<% content_for :title do %><%= @article.title %><% end %>
 <div class="header"><a href='javascript:void(0);' onclick="history.go(-1);">上一页</a><span>新闻动态</span><a href="/">首页</a></div>
 <div class="main2">
   <div class="cptp cptp3"><%= image_tag @article.cover_url(:big) %><a class="biaoti"><%= @article.title %><p class="time">发布时间：<%= @article.created_at.strftime('%Y-%m-%d') %></p></a></div>
